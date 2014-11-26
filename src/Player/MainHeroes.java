@@ -1,8 +1,8 @@
 package Player;
 
-import Practice2.DivideCombineArmy;
-import Practice3.Battle;
-import Practice3.Enemy;
+
+import Battle.Battle;
+import Battle.Enemy;
 
 /**
  * 
@@ -18,12 +18,7 @@ public class MainHeroes {
 	
 	public static void main(String[] args) {
 		Menu myMenu = new Menu();
-		DivideCombineArmy divComArmy = new DivideCombineArmy();
 		myMenu.console();
-		boolean a = divComArmy.choise();
-		if(a == true){
-			divComArmy.choise2();
-		}
 		Enemy.enemy();
 		boolean n, m;
 		System.out.println("\nБой начался!");

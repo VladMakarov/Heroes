@@ -1,14 +1,14 @@
-package Practice3;
+package Battle;
 
 import java.util.Scanner;
 
+import Model.Archer;
+import Model.Axeman;
+import Model.Horseman;
+import Model.Spearman;
+import Model.Swordsman;
 import Player.MainHeroes;
 import Player.Menu;
-import Practice1.Archer;
-import Practice1.Axeman;
-import Practice1.Horseman;
-import Practice1.Spearman;
-import Practice1.Swordsman;
 
 /**
  * 

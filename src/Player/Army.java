@@ -1,10 +1,10 @@
 package Player;
 
-import Practice1.Archer;
-import Practice1.Axeman;
-import Practice1.Horseman;
-import Practice1.Spearman;
-import Practice1.Swordsman;
+import Model.Archer;
+import Model.Axeman;
+import Model.Horseman;
+import Model.Spearman;
+import Model.Swordsman;
 
 /**
  * 

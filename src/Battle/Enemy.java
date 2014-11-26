@@ -1,4 +1,4 @@
-package Practice3;
+package Battle;
 
 import Player.Army;
 

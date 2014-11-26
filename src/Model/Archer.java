@@ -1,4 +1,4 @@
-package Practice1;
+package Model;
 
 public class Archer extends WarriorType{
 	public static int PRICE = 15;
