@@ -12,17 +12,17 @@ import Player.Menu;
 
 /**
  * 
- * Класс битвы.
- * Содержет методы Ходов для игрока и компьютера.
+ * РљР»Р°СЃСЃ Р±РёС‚РІС‹.
+ * РЎРѕРґРµСЂР¶РµС‚ РјРµС‚РѕРґС‹ РҐРѕРґРѕРІ РґР»СЏ РёРіСЂРѕРєР° Рё РєРѕРјРїСЊСЋС‚РµСЂР°.
  */
 
 public class Battle {
-	static String typeWarriorName[] = { "ЛУЧНИКИ", "ТОПОРИСТЫ", "ВСАДНИКИ", 
-					"ПИКЕНЕРЫ", "МЕЧНИКИ"};
+	static String typeWarriorName[] = { "Р›РЈР§РќРРљР", "РўРћРџРћР РРЎРўР«", "Р’РЎРђР”РќРРљР", 
+					"РџРРљР•РќР•Р Р«", "РњР•Р§РќРРљР"};
 	static boolean flag;
 	static Scanner in = new Scanner(System.in);
 
-	// Метод для ходов игрока.
+	// РњРµС‚РѕРґ РґР»СЏ С…РѕРґРѕРІ РёРіСЂРѕРєР°.
 
 	public static boolean battle(int i) {
 		System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
@@ -31,11 +31,11 @@ public class Battle {
 		int helpDmg = 0; 
 		int helpDmg1 = 0;
 		if (Menu.myArmy.getSumArmy() == 0) {
-			System.out.println("\nВы проиграли.");
+			System.out.println("\nР’С‹ РїСЂРѕРёРіСЂР°Р»Рё.");
 			return false;
 		} else {
 			if (Enemy.enemyArmy.getSumArmy() != 0) {
-				do { // Проверка на наличие войск у игрока.
+				do { // РџСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РІРѕР№СЃРє Сѓ РёРіСЂРѕРєР°.
 					if (i == 0) {
 						if (Menu.myArmy.archersSum == 0) {
 							i++;
@@ -68,14 +68,14 @@ public class Battle {
 					}
 				} while (i == 0);
 				MainHeroes.i = i;
-				System.out.println("\nХодят ваши " + typeWarriorName[i]
-						+ " выберите цель:");
-				do { // Выбор игрока кого атаковать и проверка на наличие войнов у врага.
+				System.out.println("\nРҐРѕРґСЏС‚ РІР°С€Рё " + typeWarriorName[i]
+						+ " РІС‹Р±РµСЂРёС‚Рµ С†РµР»СЊ:");
+				do { // Р’С‹Р±РѕСЂ РёРіСЂРѕРєР° РєРѕРіРѕ Р°С‚Р°РєРѕРІР°С‚СЊ Рё РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РІРѕР№РЅРѕРІ Сѓ РІСЂР°РіР°.
 					flag = false;
 					switch (in.nextInt()) {
 					case 1:
 						if (Enemy.enemyArmy.archersSum == 0) {
-							System.out.println("Ошибка! У врага нет лучников.");
+							System.out.println("РћС€РёР±РєР°! РЈ РІСЂР°РіР° РЅРµС‚ Р»СѓС‡РЅРёРєРѕРІ.");
 							flag = true;
 						} else {
 							helpDmg = Menu.myArmy.getDmg(i + 1);
@@ -85,16 +85,16 @@ public class Battle {
 								helpDmg1 = Enemy.enemyArmy.getHp(1) - helpDmg;
 								Enemy.enemyArmy.archersSum = helpDmg1 / Archer.hp;
 							}
-							System.out.println("Ваши " + typeWarriorName[i]
-									+ " ударили enemyЛучников на " + helpDmg
-									+ " у врага осталось "
-									+ Enemy.enemyArmy.archersSum + " Лучников");
+							System.out.println("Р’Р°С€Рё " + typeWarriorName[i]
+									+ " СѓРґР°СЂРёР»Рё enemyР›СѓС‡РЅРёРєРѕРІ РЅР° " + helpDmg
+									+ " Сѓ РІСЂР°РіР° РѕСЃС‚Р°Р»РѕСЃСЊ "
+									+ Enemy.enemyArmy.archersSum + " Р›СѓС‡РЅРёРєРѕРІ");
 						}
 						break;
 					case 2:
 						if (Enemy.enemyArmy.axemanSum == 0) {
 							System.out
-									.println("Ошибка! У врага нет топористов.");
+									.println("РћС€РёР±РєР°! РЈ РІСЂР°РіР° РЅРµС‚ С‚РѕРїРѕСЂРёСЃС‚РѕРІ.");
 							flag = true;
 						} else {
 							helpDmg = Menu.myArmy.getDmg(i + 1);
@@ -105,17 +105,17 @@ public class Battle {
 								Enemy.enemyArmy.axemanSum = helpDmg1 / Axeman.hp;
 							}
 							System.out
-									.println("Ваши " + typeWarriorName[i]
-											+ " ударили enemyТопористов на "
-											+ helpDmg + " у врага осталось "
+									.println("Р’Р°С€Рё " + typeWarriorName[i]
+											+ " СѓРґР°СЂРёР»Рё enemyРўРѕРїРѕСЂРёСЃС‚РѕРІ РЅР° "
+											+ helpDmg + " Сѓ РІСЂР°РіР° РѕСЃС‚Р°Р»РѕСЃСЊ "
 											+ Enemy.enemyArmy.axemanSum
-											+ " Топористов");
+											+ " РўРѕРїРѕСЂРёСЃС‚РѕРІ");
 						}
 						break;
 					case 3:
 						if (Enemy.enemyArmy.horsemanSum == 0) {
 							System.out
-									.println("Ошибка! У врага нет всадников.");
+									.println("РћС€РёР±РєР°! РЈ РІСЂР°РіР° РЅРµС‚ РІСЃР°РґРЅРёРєРѕРІ.");
 							flag = true;
 						} else {
 							helpDmg = Menu.myArmy.getDmg(i + 1);
@@ -125,17 +125,17 @@ public class Battle {
 								helpDmg1 = Enemy.enemyArmy.getHp(3) - helpDmg;
 								Enemy.enemyArmy.horsemanSum = helpDmg1 / Horseman.hp;
 							}
-							System.out.println("Ваши " + typeWarriorName[i]
-									+ " ударили enemyВсадников на " + helpDmg
-									+ " у врага осталось "
+							System.out.println("Р’Р°С€Рё " + typeWarriorName[i]
+									+ " СѓРґР°СЂРёР»Рё enemyР’СЃР°РґРЅРёРєРѕРІ РЅР° " + helpDmg
+									+ " Сѓ РІСЂР°РіР° РѕСЃС‚Р°Р»РѕСЃСЊ "
 									+ Enemy.enemyArmy.horsemanSum
-									+ " Всадников");
+									+ " Р’СЃР°РґРЅРёРєРѕРІ");
 						}
 						break;
 					case 4:
 						if (Enemy.enemyArmy.spearmanSum == 0) {
 							System.out
-									.println("Ошибка! У врага нет пикенеров.");
+									.println("РћС€РёР±РєР°! РЈ РІСЂР°РіР° РЅРµС‚ РїРёРєРµРЅРµСЂРѕРІ.");
 							flag = true;
 						} else {
 							helpDmg = Menu.myArmy.getDmg(i + 1);
@@ -145,16 +145,16 @@ public class Battle {
 								helpDmg1 = Enemy.enemyArmy.getHp(4) - helpDmg;
 								Enemy.enemyArmy.spearmanSum = helpDmg1 / Spearman.hp;
 							}
-							System.out.println("Ваши " + typeWarriorName[i]
-									+ " ударили enemyПикенеров на " + helpDmg
-									+ " у врага осталось "
+							System.out.println("Р’Р°С€Рё " + typeWarriorName[i]
+									+ " СѓРґР°СЂРёР»Рё enemyРџРёРєРµРЅРµСЂРѕРІ РЅР° " + helpDmg
+									+ " Сѓ РІСЂР°РіР° РѕСЃС‚Р°Р»РѕСЃСЊ "
 									+ Enemy.enemyArmy.spearmanSum
-									+ " Пикенеров");
+									+ " РџРёРєРµРЅРµСЂРѕРІ");
 						}
 						break;
 					case 5:
 						if (Enemy.enemyArmy.swordsmanSum == 0) {
-							System.out.println("Ошибка! У врага нет мечников.");
+							System.out.println("РћС€РёР±РєР°! РЈ РІСЂР°РіР° РЅРµС‚ РјРµС‡РЅРёРєРѕРІ.");
 							flag = true;
 						} else {
 							helpDmg = Menu.myArmy.getDmg(i + 1);
@@ -164,15 +164,15 @@ public class Battle {
 								helpDmg1 = Enemy.enemyArmy.getHp(5) - helpDmg;
 								Enemy.enemyArmy.swordsmanSum = helpDmg1 / Swordsman.hp;
 							}
-							System.out.println("Ваши " + typeWarriorName[i]
-									+ " ударили enemyМечников на " + helpDmg
-									+ " у врага осталось "
+							System.out.println("Р’Р°С€Рё " + typeWarriorName[i]
+									+ " СѓРґР°СЂРёР»Рё enemyРњРµС‡РЅРёРєРѕРІ РЅР° " + helpDmg
+									+ " Сѓ РІСЂР°РіР° РѕСЃС‚Р°Р»РѕСЃСЊ "
 									+ Enemy.enemyArmy.swordsmanSum
-									+ " Мечников");
+									+ " РњРµС‡РЅРёРєРѕРІ");
 						}
 						break;
 					default:
-						System.out.println("Не правильный выбор!");
+						System.out.println("РќРµ РїСЂР°РІРёР»СЊРЅС‹Р№ РІС‹Р±РѕСЂ!");
 						flag = true;
 						break;
 					}
@@ -185,7 +185,7 @@ public class Battle {
 		}
 	}
 
-	// Метод для хода компьютера.
+	// РњРµС‚РѕРґ РґР»СЏ С…РѕРґР° РєРѕРјРїСЊСЋС‚РµСЂР°.
 
 	public static boolean enemyMove() {
 		int helpDmg = 0;
@@ -196,11 +196,11 @@ public class Battle {
 		int enemyChoise = 0;	
 		String helpTypeWar = "";
 		if (Enemy.enemyArmy.getSumArmy() == 0) {
-			System.out.println("\nПоздравляем! Вы выиграли.");
+			System.out.println("\nРџРѕР·РґСЂР°РІР»СЏРµРј! Р’С‹ РІС‹РёРіСЂР°Р»Рё.");
 			return false;
 		} else {
 			if (Menu.myArmy.getSumArmy() != 0) {
-				do { // Проверка на наличие войск у врага.
+				do { // РџСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РІРѕР№СЃРє Сѓ РІСЂР°РіР°.
 					flag = false;
 					move = (int) (Math.random() * 5);
 					if (move == 0) {
@@ -229,15 +229,15 @@ public class Battle {
 						}
 					}
 				} while (flag);
-				do { // Выбор врага кого атаковать, и проверка на наличие войск
-						// у игрока.
+				do { // Р’С‹Р±РѕСЂ РІСЂР°РіР° РєРѕРіРѕ Р°С‚Р°РєРѕРІР°С‚СЊ, Рё РїСЂРѕРІРµСЂРєР° РЅР° РЅР°Р»РёС‡РёРµ РІРѕР№СЃРє
+						// Сѓ РёРіСЂРѕРєР°.
 					flag = false;
 					enemyChoise = (int) (Math.random() * 5) + 1;
 					if (enemyChoise == 1) {
 						if (Menu.myArmy.archersSum == 0) {
 							flag = true;
 						} else {
-							helpTypeWar = "Лучников";
+							helpTypeWar = "Р›СѓС‡РЅРёРєРѕРІ";
 							helpHp = Archer.hp;
 							helpEnemyChoise = Menu.myArmy.archersSum;
 						}
@@ -246,7 +246,7 @@ public class Battle {
 						if (Menu.myArmy.axemanSum == 0) {
 							flag = true;
 						} else {
-							helpTypeWar = "Топористов";
+							helpTypeWar = "РўРѕРїРѕСЂРёСЃС‚РѕРІ";
 							helpHp = Axeman.hp;
 							helpEnemyChoise = Menu.myArmy.axemanSum;
 						}
@@ -255,7 +255,7 @@ public class Battle {
 						if (Menu.myArmy.horsemanSum == 0) {
 							flag = true;
 						} else {
-							helpTypeWar = "Всадников";
+							helpTypeWar = "Р’СЃР°РґРЅРёРєРѕРІ";
 							helpHp = Horseman.hp;
 							helpEnemyChoise = Menu.myArmy.horsemanSum;
 						}
@@ -264,7 +264,7 @@ public class Battle {
 						if (Menu.myArmy.spearmanSum == 0) {
 							flag = true;
 						} else {
-							helpTypeWar = "Пикенеров";
+							helpTypeWar = "РџРёРєРµРЅРµСЂРѕРІ";
 							helpHp = Spearman.hp;
 							helpEnemyChoise = Menu.myArmy.spearmanSum;
 						}
@@ -273,13 +273,13 @@ public class Battle {
 						if (Menu.myArmy.swordsmanSum == 0) {
 							flag = true;
 						} else {
-							helpTypeWar = "Мечников";
+							helpTypeWar = "РњРµС‡РЅРёРєРѕРІ";
 							helpHp = Swordsman.hp;
 							helpEnemyChoise = Menu.myArmy.swordsmanSum;
 						}
 					}
 				} while (flag);
-				System.out.println("\nХодят вражеские " + typeWarriorName[move]);
+				System.out.println("\nРҐРѕРґСЏС‚ РІСЂР°Р¶РµСЃРєРёРµ " + typeWarriorName[move]);
 				helpDmg = Enemy.enemyArmy.getDmg(move + 1);
 				if (helpDmg >= Menu.myArmy.getHp(enemyChoise)) {
 					helpEnemyChoise = 0;
@@ -287,9 +287,9 @@ public class Battle {
 					helpDmg1 = Menu.myArmy.getHp(enemyChoise) - helpDmg;
 					helpEnemyChoise = helpDmg1 / helpHp;
 				}
-				System.out.println("Вражеские " + typeWarriorName[move]
-						+ " ударили ваших " + helpTypeWar + " на " + helpDmg
-						+ " у вас осталось " + helpEnemyChoise + " "
+				System.out.println("Р’СЂР°Р¶РµСЃРєРёРµ " + typeWarriorName[move]
+						+ " СѓРґР°СЂРёР»Рё РІР°С€РёС… " + helpTypeWar + " РЅР° " + helpDmg
+						+ " Сѓ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ " + helpEnemyChoise + " "
 						+ helpTypeWar);
 				if (enemyChoise == 1) {
 					Menu.myArmy.archersSum = helpEnemyChoise;

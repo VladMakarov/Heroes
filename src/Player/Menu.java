@@ -10,45 +10,45 @@ import Model.Swordsman;
 
 /**
  * 
- * Класс Взаимодействия с игроком.
- * Просит ввести имя, название армии, нанять армию.
+ * РљР»Р°СЃСЃ Р’Р·Р°РёРјРѕРґРµР№СЃС‚РІРёСЏ СЃ РёРіСЂРѕРєРѕРј.
+ * РџСЂРѕСЃРёС‚ РІРІРµСЃС‚Рё РёРјСЏ, РЅР°Р·РІР°РЅРёРµ Р°СЂРјРёРё, РЅР°РЅСЏС‚СЊ Р°СЂРјРёСЋ.
  *
  */
 
 public class Menu {
 	boolean flag;
-	String complite = "Войско готово!";
+	String complite = "Р’РѕР№СЃРєРѕ РіРѕС‚РѕРІРѕ!";
 	Scanner in = new Scanner(System.in);
 	public static Army myArmy;
 		
 	void console() {
 		myArmy = new Army();
-		System.out.println("Введите ваше имя.");
+		System.out.println("Р’РІРµРґРёС‚Рµ РІР°С€Рµ РёРјСЏ.");
 		PlayerInfo.name = in.nextLine();
-		System.out.println("Введите название вашего войска.");
+		System.out.println("Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ РІР°С€РµРіРѕ РІРѕР№СЃРєР°.");
 		myArmy.armyName = in.nextLine();
-		System.out.println("Добро пожаловать " + PlayerInfo.name + "!");
+		System.out.println("Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ " + PlayerInfo.name + "!");
 		System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
-		System.out.println("\nУ вас есть " + PlayerInfo.gold + " золота, наймите себе войско:"
-							+ "\n1. Лучник: 15 золота." 
-							+ "\n2. Топорист: 20 золота."
-							+ "\n3. Всадник: 35 золота."
-							+ "\n4. Пикенер: 20 золота." 
-							+ "\n5. Мечник: 25 золота.");
+		System.out.println("\nРЈ РІР°СЃ РµСЃС‚СЊ " + PlayerInfo.gold + " Р·РѕР»РѕС‚Р°, РЅР°Р№РјРёС‚Рµ СЃРµР±Рµ РІРѕР№СЃРєРѕ:"
+							+ "\n1. Р›СѓС‡РЅРёРє: 15 Р·РѕР»РѕС‚Р°." 
+							+ "\n2. РўРѕРїРѕСЂРёСЃС‚: 20 Р·РѕР»РѕС‚Р°."
+							+ "\n3. Р’СЃР°РґРЅРёРє: 35 Р·РѕР»РѕС‚Р°."
+							+ "\n4. РџРёРєРµРЅРµСЂ: 20 Р·РѕР»РѕС‚Р°." 
+							+ "\n5. РњРµС‡РЅРёРє: 25 Р·РѕР»РѕС‚Р°.");
 		System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
 		
 		if (PlayerInfo.gold > 35) {
-			System.out.println("\nСколько Лучников нанять?");
+			System.out.println("\nРЎРєРѕР»СЊРєРѕ Р›СѓС‡РЅРёРєРѕРІ РЅР°РЅСЏС‚СЊ?");
 			do {
 				flag = false;
 				int a = in.nextInt();
 				if (PlayerInfo.gold < a * Archer.PRICE) {
-					System.out.println("Не достаточно золота!");
+					System.out.println("РќРµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ Р·РѕР»РѕС‚Р°!");
 					flag = true;
 				} else {
 					PlayerInfo.gold -= a * Archer.PRICE;
 					myArmy.archersSum = a;
-					System.out.println("У вас осталось золота: " + PlayerInfo.gold);
+					System.out.println("РЈ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ Р·РѕР»РѕС‚Р°: " + PlayerInfo.gold);
 				}
 			} while (flag);
 		} else {
@@ -57,17 +57,17 @@ public class Menu {
 			}
 
 		if (PlayerInfo.gold > 35) {
-			System.out.println("Сколько Топористов нанять?");
+			System.out.println("РЎРєРѕР»СЊРєРѕ РўРѕРїРѕСЂРёСЃС‚РѕРІ РЅР°РЅСЏС‚СЊ?");
 			do {
 				flag = false;
 				int b = in.nextInt();
 				if (PlayerInfo.gold < b * Axeman.PRICE) {
-					System.out.println("Не достаточно золота!");
+					System.out.println("РќРµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ Р·РѕР»РѕС‚Р°!");
 					flag = true;
 				} else {
 					PlayerInfo.gold -= b * Axeman.PRICE;
 					myArmy.axemanSum = b;
-					System.out.println("У вас осталось золота: " + PlayerInfo.gold);
+					System.out.println("РЈ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ Р·РѕР»РѕС‚Р°: " + PlayerInfo.gold);
 				}
 			} while (flag);
 		} else {
@@ -76,17 +76,17 @@ public class Menu {
 			}
 		
 		if (PlayerInfo.gold > 35) {
-			System.out.println("Сколько Всадников нанять?");
+			System.out.println("РЎРєРѕР»СЊРєРѕ Р’СЃР°РґРЅРёРєРѕРІ РЅР°РЅСЏС‚СЊ?");
 			do {
 				flag = false;
 				int c = in.nextInt();
 				if (PlayerInfo.gold < c * Horseman.PRICE) {
-					System.out.println("Не достаточно золота!");
+					System.out.println("РќРµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ Р·РѕР»РѕС‚Р°!");
 					flag = true;
 				} else {
 					PlayerInfo.gold -= c * Horseman.PRICE;
 					myArmy.horsemanSum = c;
-					System.out.println("У вас осталось золота: " + PlayerInfo.gold);
+					System.out.println("РЈ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ Р·РѕР»РѕС‚Р°: " + PlayerInfo.gold);
 				}
 			} while (flag);
 		} else {
@@ -95,17 +95,17 @@ public class Menu {
 			}
 		
 		if (PlayerInfo.gold > 35) {
-			System.out.println("Сколько Пикенеров нанять?");
+			System.out.println("РЎРєРѕР»СЊРєРѕ РџРёРєРµРЅРµСЂРѕРІ РЅР°РЅСЏС‚СЊ?");
 			do {
 				flag = false;
 				int d = in.nextInt();
 				if (PlayerInfo.gold < d * Spearman.PRICE) {
-					System.out.println("Не достаточно золота!");
+					System.out.println("РќРµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ Р·РѕР»РѕС‚Р°!");
 					flag = true;
 				} else {
 					PlayerInfo.gold -= d * Spearman.PRICE;
 					myArmy.spearmanSum = d;
-					System.out.println("У вас осталось золота: " + PlayerInfo.gold);
+					System.out.println("РЈ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ Р·РѕР»РѕС‚Р°: " + PlayerInfo.gold);
 				}
 			} while (flag);
 		} else {
@@ -114,12 +114,12 @@ public class Menu {
 			}
 
 		if (PlayerInfo.gold > 35) {
-			System.out.println("Сколько Мечников нанять?");
+			System.out.println("РЎРєРѕР»СЊРєРѕ РњРµС‡РЅРёРєРѕРІ РЅР°РЅСЏС‚СЊ?");
 			do {
 				flag = false;
 				int e = in.nextInt();
 				if (PlayerInfo.gold < e * Swordsman.PRICE) {
-					System.out.println("Не достаточно золота!");
+					System.out.println("РќРµ РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ Р·РѕР»РѕС‚Р°!");
 					flag = true;
 				} else {
 					PlayerInfo.gold -= e * Swordsman.PRICE;
