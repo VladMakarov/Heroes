@@ -2,13 +2,13 @@ package Model;
 
 /**
  * 
- * СуперКласс типов войск с методами получения ДМГ и ХП.
+ * РЎСѓРїРµСЂРљР»Р°СЃСЃ С‚РёРїРѕРІ РІРѕР№СЃРє СЃ РјРµС‚РѕРґР°РјРё РїРѕР»СѓС‡РµРЅРёСЏ Р”РњР“ Рё РҐРџ.
  *
  */
 
 public class WarriorType {
 
-	// Получение ДМГ всего типа войск.
+	// РџРѕР»СѓС‡РµРЅРёРµ Р”РњР“ РІСЃРµРіРѕ С‚РёРїР° РІРѕР№СЃРє.
 	
 	public int warriorTypeDmg(int warriorSum, int min, int max){
 		int allDmg = 0;
@@ -18,7 +18,7 @@ public class WarriorType {
 		return allDmg;
 	}
 	
-	// Получение ХП всего типа войск.
+	// РџРѕР»СѓС‡РµРЅРёРµ РҐРџ РІСЃРµРіРѕ С‚РёРїР° РІРѕР№СЃРє.
 	
 	public int warriorTypeHp(int warriorSum, int hp){
 		int allHp = 0;

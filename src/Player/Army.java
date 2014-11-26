@@ -8,8 +8,8 @@ import Model.Swordsman;
 
 /**
  * 
- * Класс Армии. 
- * Выводит информацию о армии, расчитывает общий ДМГ и ХП типа война.
+ * РљР»Р°СЃСЃ РђСЂРјРёРё. 
+ * Р’С‹РІРѕРґРёС‚ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ Р°СЂРјРёРё, СЂР°СЃС‡РёС‚С‹РІР°РµС‚ РѕР±С‰РёР№ Р”РњР“ Рё РҐРџ С‚РёРїР° РІРѕР№РЅР°.
  *
  */
 
@@ -21,14 +21,14 @@ public class Army {
 	public int spearmanSum;
 	public int swordsmanSum;
 	
-	// Метод подсчета всех типов войнов.
+	// РњРµС‚РѕРґ РїРѕРґСЃС‡РµС‚Р° РІСЃРµС… С‚РёРїРѕРІ РІРѕР№РЅРѕРІ.
 	
 	public int getSumArmy(){
 		return archersSum + axemanSum + horsemanSum + spearmanSum + swordsmanSum;
 		
 	}
 
-	// Метод расчета ДМГ типа войнов.
+	// РњРµС‚РѕРґ СЂР°СЃС‡РµС‚Р° Р”РњР“ С‚РёРїР° РІРѕР№РЅРѕРІ.
 	
 	public int getDmg(int type){
 		int dmg = 0;
@@ -55,7 +55,7 @@ public class Army {
 		return dmg;
 	}
 	
-	// Метод расчета ХП типа войнов.
+	// РњРµС‚РѕРґ СЂР°СЃС‡РµС‚Р° РҐРџ С‚РёРїР° РІРѕР№РЅРѕРІ.
 	
 	public int getHp(int type){
 		int hp = 0;
@@ -82,15 +82,15 @@ public class Army {
 		return hp;
 	}
 		
-		// Вывод информации о войске.
+		// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РІРѕР№СЃРєРµ.
 		
 		public void armyInform(){
-			System.out.println("\nНазвание армии: " + Army.this.armyName + "."
-					+ "\nЛучники: " + Army.this.archersSum 
-					+ "\nТопористы: " + Army.this.axemanSum 
-					+ "\nВсадники: " + Army.this.horsemanSum
-					+ "\nПикенеры: " + Army.this.spearmanSum 
-					+ "\nМечники: " + Army.this.swordsmanSum);
+			System.out.println("\nРќР°Р·РІР°РЅРёРµ Р°СЂРјРёРё: " + Army.this.armyName + "."
+					+ "\nР›СѓС‡РЅРёРєРё: " + Army.this.archersSum 
+					+ "\nРўРѕРїРѕСЂРёСЃС‚С‹: " + Army.this.axemanSum 
+					+ "\nР’СЃР°РґРЅРёРєРё: " + Army.this.horsemanSum
+					+ "\nРџРёРєРµРЅРµСЂС‹: " + Army.this.spearmanSum 
+					+ "\nРњРµС‡РЅРёРєРё: " + Army.this.swordsmanSum);
 			System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
 		}
 
