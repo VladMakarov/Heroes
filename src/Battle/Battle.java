@@ -28,7 +28,7 @@ public class Battle {
 		System.out.println("_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _");
 		Menu.myArmy.armyInform();
 		Enemy.enemyArmy.armyInform();
-		int helpDmg = 0;
+		int helpDmg = 0; 
 		int helpDmg1 = 0;
 		if (Menu.myArmy.getSumArmy() == 0) {
 			System.out.println("\nВы проиграли.");
